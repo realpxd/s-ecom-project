@@ -26,7 +26,39 @@ var p_array_A = [
 ]
 console.log(p_array_A)
 
-const prodContA = document.querySelector(".b-b #productSlider")
+const menuIcon = document.querySelector(".menuBar")
+const sNav = document.querySelector(".sNav")
+/*const prodContA = document.querySelector(".b-b #productSlider")*/
+sNav.style.left = "-120vw"
+menuIcon.addEventListener("click" , function(){
+	if(sNav.style.left == "-120vw"){
+		sNav.style.left = "0"
+		//menuIcon.value = "&#8801;"
+		newMult()
+	}else{
+		sNav.style.left = "-120vw"
+		//menuIcon.value = "&#9587;"
+		defaultHb()
+	}
+})
+
+//Function to Change the Hamburger icon
+var equationValue = new Array("",'&#9587;','&#8801;',0,2,3);
+var mdiv = document.createElement("p");
+
+function newMult(){
+	mdiv.innerHTML = equationValue[1];
+	menuIcon.value = (mdiv.textContent || mdiv.innerText);
+	menuIcon.style.fontSize = "2rem";
+	menuIcon.style.fontWeight = "700";
+};
+function defaultHb(){
+	mdiv.innerHTML = equationValue[2];
+	menuIcon.value = (mdiv.textContent || mdiv.innerText);
+	menuIcon.style.fontSize = "3rem";
+	menuIcon.style.fontWeight = "200";
+};
+
 
 const prodCont = document.querySelectorAll(".b-b .productSlider")
 const dvcWrapper = document.querySelector(".wrapper-a")
