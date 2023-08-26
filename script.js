@@ -5,23 +5,37 @@ var p_array_A = [
 	{
 		"img" : "./assets/img/blob.svg",
 		"title" : "Product 1",
-		"desc" : "Lorem ipsum dolor sit amet",
-		"price" : "1000₹",
+		"desc" : "Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet",
+		"price" : "2000",
 		"id" : "p1_this"
 	},
 	{
 		"img" : "./assets/img/blob.svg",
 		"title" : "Product 2",
 		"desc" : "Lorem ipsum dolor sit amet",
-		"price" : "negotiable",
+		"price" : "1000",
 		"id" : "p2_this"
 	},
 	{
 		"img" : "./assets/img/blob.svg",
 		"title" : "Product 3",
 		"desc" : "Lorem ipsum dolor sit amet",
-		"price" : "9000₹",
+		"price" : "9000",
 		"id" : "p3_this"
+	},
+	{
+		"img" : "./assets/img/blob.svg",
+		"title" : "Product 4",
+		"desc" : "Lorem ipsum dolor sit amet",
+		"price" : "4000",
+		"id" : "p4_this"
+	},
+	{
+		"img" : "./assets/img/blob.svg",
+		"title" : "Product 5",
+		"desc" : "Lorem ipsum dolor sit amet",
+		"price" : "7000",
+		"id" : "p5_this"
 	}
 ]
 console.log(p_array_A)
@@ -69,9 +83,9 @@ p_array_A.map((prod) => {
 	var displayData = `
 		<div class="product" id="product" onclick='displayDataFunc("${prod.img}" , "${prod.title}" , "${prod.desc}", "${prod.price}" , "${prod.id}")'>
 			<img src="${prod.img}" alt="product" />
-			<h3>${prod.title}</h3>
+			<h4>${prod.title}</h4>
 			<p>${prod.desc}</p>
-			<p id="pri">${prod.price}</p>
+			<p id="pri">${prod.price}₹</p>
 		</div>
 	
 	`
@@ -83,9 +97,9 @@ p_array_A.map((prod) => {
 	var displayData = `
 		<div class="product" id="product" onclick='displayDataFunc("${prod.img}" , "${prod.title}" , "${prod.desc}", "${prod.price}" , "${prod.id}")'>
 			<img src="${prod.img}" alt="product" />
-			<h3>${prod.title}</h3>
+			<h4>${prod.title}</h4>
 			<p>${prod.desc}</p>
-			<p id="pri">${prod.price}</p>
+			<p id="pri">${prod.price}₹</p>
 		</div>
 	
 	`
@@ -97,9 +111,9 @@ p_array_A.map((prod) => {
 	var displayData = `
 		<div class="product" id="product" onclick='displayDataFunc("${prod.img}" , "${prod.title}" , "${prod.desc}", "${prod.price}" , "${prod.id}")'>
 			<img src="${prod.img}" alt="product" />
-			<h3>${prod.title}</h3>
+			<h4>${prod.title}</h4>
 			<p>${prod.desc}</p>
-			<p id="pri">${prod.price}</p>
+			<p id="pri">${prod.price}₹</p>
 		</div>
 	
 	`
@@ -114,17 +128,19 @@ function displayDataFunc(img , title , desc , price , pid){
 		<i onclick="caretToggle()" class="fa fa-caret-down"></i>
 		<div class="section s-a" id="s-a" >
 			<img src="${img}" alt="product" />
-			<h2>${title}</h2>
 		</div>
 		<div class="section s-b" id="s-b">
+			<h2>${title}</h2>
 			<desc>${desc}</desc>
-			<pri>${price}</pri>
+			<pri>${price}₹</pri>
 		</div>
-		<button onclick="buy('${pid}')"><i class="fa fa-whatsapp"></i>Contact on Whatsapp to Buy !</button>
+		<!-- <button onclick="buy('${pid}')"><i class="fa fa-whatsapp"></i>Contact on Whatsapp to Buy !</button> -->
+		
+		<div id="buttons"><button  onclick="initiatePayment('${pid}' , '${price}' , '${desc}')" id="payButton"><i class="fa fa-shopping-cart"></i>Buy Now!</button> <button onclick="buy('${pid}')"><i class="fa fa-whatsapp"></i>Get more Info!</button> </div>
 	`
 	console.log(pid)
 	detailViewCont.innerHTML = viewDetailData
-	dvcWrapper.style.display = "block"
+	dvcWrapper.style.display = "grid"
 	
 	function exec(){
 	detailViewCont.style.bottom = "0"
