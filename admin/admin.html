@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+
+    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+      integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+
+</head>
+
+<header>
+    
+    <h1><a href="#" onclick="window.location.reload();">Admin Panel</a></h1>
+    <form class="search-box">
+    <input type="search" placeholder="Search Product by ID" >
+    <button>Search</button>
+    </form>
+</header>
+
+<body>
+
+    <main>
+
+    <section class="wrapper-container-a">
+        <h2 class="pl-h2">Product Lists</h2>
+        <details class="product-list-container" open>
+            <summary>View All Products</summary>
+            <details>
+                <summary>Product List A</summary>
+                <div id="product-list-a" class="product-list">
+                </div>
+            </details>
+            <details>
+                <summary>Product List B</summary>
+                <div id="product-list-b" class="product-list">
+                </div>
+            </details>
+            <details>
+                <summary>Product List C</summary>
+                <div id="product-list-c" class="product-list">
+                </div>
+            </details>
+        </details>
+
+    </section>
+
+
+    <!-- <div id="restore-option" class="restore-option">
+        <p>Product deleted. Do you want to restore it?</p>
+        <button onclick="restoreProduct(nodeName, char, productId, productData)">Restore</button>
+        <span id="countdown" class="countdown">3</span>
+    </div> -->
+
+
+
+
+    <section class="wrapper-container-b">
+        <div class="p-form">
+            <h2>Add Products</h2>
+            <form>
+                <label for="title">Title</label>
+                <input type="text" name="title" id="title" placeholder="Enter title" required>
+                <label for="desc">Description</label>
+                <input type="text" name="desc" id="desc" placeholder="Enter description" required>
+                <label for="price">Price</label>
+                <input type="number" name="price" id="price" placeholder="Enter price" required>
+                <label for="img">Image</label>
+                <input type="file" name="image" id="image" accept="image/*" required>
+                <label for="list">Product List</label>
+                <select name="list" id="list" required>
+                    <option value="a">Product List A</option>
+                    <option value="b">Product List B</option>
+                    <option value="c">Product List C</option>
+                </select>
+                <button type="submit">Add Product</button>
+        </div>
+    </section>
+</main>
+
+    <script src="admin.js" type="module"></script>
+</body>
+
+</html>
