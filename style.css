@@ -171,9 +171,11 @@ body {
 }
 
 .c-z img {
+    display: block;
+    margin: auto;
     mix-blend-mode: darken;
-    height: 30vh;
-    width: 100%;
+    height: 35vh;
+    width: 70%;
 }
 
 .c-z h2 {

@@ -11,7 +11,10 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <!-- Include Razorpay Scripts -->
-  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <script src="https://checkout.razorpay.com/v1/checkout.js" defer></script>
+  
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js" defer></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js" defer></script>
   <title>Shubham</title>
 </head>
 <header class="headerTop" id="headerTop">
@@ -80,9 +83,9 @@
     <p class="copyright">Copyright 2023</p>
   </footer>
 
-  <script src="./script.js" defer></script>
+  <script type="module" src="./script.js" defer></script>
 
-  <script>
+  <script defer>
     // Your Razorpay key id
     const razorpayKey = "rzp_test_4aDlqND5TSaOCe";
 
