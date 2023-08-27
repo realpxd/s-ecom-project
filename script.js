@@ -4,7 +4,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.3.0/firebas
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
-import firebaseConfig from "../config.js";
+import firebaseConfig from "./config.js";
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
