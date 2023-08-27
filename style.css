@@ -372,6 +372,7 @@ body {
 .productSlider .product img {
     height: auto;
     width: 15vw;
+    border-radius: 1rem;
 }
 
 .productSlider .product {
